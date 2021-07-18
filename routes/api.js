@@ -147,11 +147,11 @@ loghandler = {
         message: 'masukan parameter value'
     },
     invalidKey: {
-
-    res.status(404)
-    .set("Content-Type", "text/html")
-    .sendFile(__path + '/views/404.html');
-    }),
+        status: false,
+        creator: `${creator}`,
+        code: 406,
+        message: 'apikey invalid'
+    },
     invalidlink: {
         status: false,
         creator: `${creator}`,
