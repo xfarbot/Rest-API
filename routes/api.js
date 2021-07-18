@@ -147,11 +147,11 @@ loghandler = {
         message: 'masukan parameter value'
     },
     invalidKey: {
-        status: false,
-        creator: `${creator}`,
-        code: 406,
-        message: 'apikey invalid'
-    },
+
+    res.status(404)
+    .set("Content-Type", "text/html")
+    .sendFile(__path + '/views/404.html');
+    }),
     invalidlink: {
         status: false,
         creator: `${creator}`,
@@ -2489,7 +2489,7 @@ router.get('/cekapikey', async(req, res, next) => {
       status: 'active',
       creator: `${creator}`,
       apikey: `${apikey}`,
-      message: 'APIKEY ACTIVE'
+      message: 'APIKEY AKTIF'
     })
   } else {
     res.json(loghandler.invalidKey)
