@@ -150,7 +150,7 @@ loghandler = {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'apikey invalid'
+        message: 'apikey invalid atau kamu belum membelinya'
     },
     invalidlink: {
         status: false,
@@ -165,7 +165,7 @@ loghandler = {
     error: {
         status: false,
         creator: `${creator}`,
-        message: 'emror bruh'
+        message: 'EROR, tidak dapat memanggil'
     }
 }
 
@@ -175,7 +175,7 @@ Akhir Pesan Error
 
 router.use(favicon(__path + "/views/favicon.ico"));
 
-const listkey = ["Fxc7", "Vikodk", "rxking"];
+const listkey = ["adaaku", "Vikodk", "rxking"];
 
 router.post("/apikey", async (req, res, next) => {
   const key = req.query.key;
@@ -519,7 +519,7 @@ router.get('/random/quotes', async (req, res, next) => {
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
 
-       fetch(encodeURI(`https://python-api-zhirrr.herokuapp.com/api/random/quotes`))
+       fetch(encodeURI(`https://api.zeks.xyz/api/quote?apikey=apivinz`))
         .then(response => response.json())
         .then(data => {
         var result = data;
