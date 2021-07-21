@@ -17,7 +17,7 @@
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://studiovdk.herokuapp.com/">
         <div class="sidebar-brand-text mx-3">VIKO - API</div>
       </a>
       <hr class="sidebar-divider my-0">
@@ -176,6 +176,7 @@
             <a class="collapse-item" href="/api/textpro/christmas?apikey=APIKEY&text=viko sayang">Christmas Text Image</a>
             <a class="collapse-item" href="/api/textpro/3d-gradient?apikey=APIKEY&text=viko sayang">3D Gradient Text Image</a>
             <a class="collapse-item" href="/api/textpro/porn-hub?apikey=APIKEY&text1=viko&text2=Sayang">Porn Hub Text Image</a>
+            <a class="collapse-item" href="/api/textpro/porn-hub?apikey=APIKEY&text1=viko&text2=Sayang">Matrix Text Image</a>
           </div>
         </div>
       </li>
@@ -189,6 +190,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Random API</h6>
             <a class="collapse-item" href="/api/random/quotes?apikey=APIKEY">Quotes</a>
+			<a class="collapse-item" href="/api/random/pantun?apikey=APIKEY">Pantun</a>
             <a class="collapse-item" href="/api/random/quotes/muslim?apikey=APIKEY">Quotes Islami</a>
             <a class="collapse-item" href="/api/random/quotes/kanye?apikey=APIKEY">Quotes Kanye</a>
             <a class="collapse-item" href="/api/random/asmaulhusna?apikey=APIKEY">Asmaul Husna</a>
@@ -208,7 +210,7 @@
             <h6 class="collapse-header">Anime/Manga Features</h6>
             <a class="collapse-item" href="/api/anime/kusonime?search=planetarian&apikey=APIKEY">Kusonime</a>
             <a class="collapse-item" href="/api/anime/manga?search=kimetsu no yaiba&apikey=APIKEY">Manga</a>
-            <a class="collapse-item" href="/api/anime/loli?apikey=APIKEY">Random LoLi</a>
+            <a class="collapse-item" href="/api/anime/loli?apikey=APIKEY">Random loli</a>
           </div>
         </div>
       </li>
@@ -223,6 +225,7 @@
             <a class="collapse-item" href="/api/kuis/caklontong?apikey=APIKEY">Cak Lontong</a>
             <a class="collapse-item" href="/api/kuis/tebakgambar?apikey=APIKEY">Tebak Gambar</a>
              <a class="collapse-item" href="/api/hilih?kata=viko ganteng banget njir no debat&apikey=APIKEY">Kata Hilih</a>
+			<a class="collapse-item" href="https://api.zeks.xyz/api/simi?apikey=xF6BnMYUJzaPtRj7iOIDS9FCFvJ&text=HALO%20SIMI">Simi simi ZEKS</a>
          </div>
          </div>
         </li>
@@ -233,7 +236,7 @@
        </a>
       <div id="collapseItem" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
        <div class="py-2 collapse-inner rounded">
-         <h6 class="collapse-header">Tools Features (FREE)</h6>
+         <h6 class="collapse-header">Tools Features</h6>
             <a class="collapse-item" href="/api/web2plain-text?apikey=APIKEY&url=https://fxc7-api.herokuapp.com">Web To Plain-Text</a>
             <a class="collapse-item" href="/api/tools/wpuser?apikey=APIKEY&url=http://gdjms.co.za/">Wordpress User</a>
             <a class="collapse-item" href="/api/short/tinyurl?url=google.com&apikey=APIKEY">Shortlink Tinyurl</a>
@@ -265,6 +268,7 @@
             <a class="collapse-item" href="/api/info/drakorasia?search=tale&apikey=APIKEY">Drakor Asia</a>
             <a class="collapse-item" href="/api/info/kbbi?kata=pohon&apikey=APIKEY">KBBI</a>
             <a class="collapse-item" href="/api/info/kodepos?kota=jakarta&apikey=APIKEY">Kode Pos</a>
+			<a class="collapse-item" href="/api/info/berita?apikey=APIKEY">Cnn nasional</a>
           </div>
         </div>
       </li>
@@ -363,7 +367,7 @@
 
                 <img class="img-profile rounded-circle" src="https://i.ibb.co/mRgyq9q/logo2.png" style="max-width: 60px">
 
-                <span class="ml-2 d-none d-lg-inline text-white small">Mamank OCOBOT</span>
+                <span class="ml-2 d-none d-lg-inline text-white small">Viko DK</span>
 
               </a>
 
@@ -389,7 +393,7 @@
         <div class="card-header py-3">
          <div class="card-body">
            <div class="row align-item-center">
-		   <h3>Note:</h3><p>Api ini adalah api free untuk anda, mungkin ada yang berbayar entah apa tanyakan owner dipojok kanan bawah</p>
+		   <h3>Note:</h3><p>Api ini adalah api free untuk anda, mungkin ada yang berbayar entah apa tanyakan owner dipojok kanan bawah, apikey bisa minta owner</p>
            </div>
                   </div>
                 </div>
@@ -457,11 +461,13 @@
                     <div class="col-auto">
                       <i class="fas fa-clock fa-2x text-primary"></i>
                     </div>
-                  </div>
+                  </div><br>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Waktu Stanby</div>
+                      <br>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="vikoo">00</div>
                 </div>
               </div>
             </div>
-
         <!---Container Fluid-->
       <!-- Footer -->
      <form action="/api/cekapikey">
@@ -492,7 +498,7 @@
   <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>Copyright &copy; 2021 - Developed By
-              <b>fxc7 - Zhirr - MR.VIKO</b>
+              <b>MR.VIKO</b>
             </span>
           </div>
         </div>
