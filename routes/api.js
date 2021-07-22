@@ -225,31 +225,7 @@ router.get('/music/joox', async(req, res, next) => {
   }
 });
 
-router.get('/music/soundcloud', async(req, res, next) => {
-  const apikey = req.query.apikey;
-  const query = req.query.query;
-  if(!apikey) return res.json(loghandler.notparam)
-  if(!query) return res.json(loghandler.notquery)
-  
-  if(listkey.includes(apikey)){
-  fetch(encodeURI(`https://api.zeks.xyz/api/soundcloud?apikey=xF6BnMYUJzaPtRj7iOIDS9FCFvJ&url=${query}`))
-  .then(response => response.json())
-        .then(hasil => {
 
-        var result = hasil.data;
-             res.json({
-                 status : true,
-                 creator : `${creator}`,
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-} else {
-  res.json(loghandler.invalidKey)
-}
-})
 router.get('/f/simi', async(req, res, next) => {
   const apikey = req.query.apikey;
   const query = req.query.query;
@@ -257,7 +233,7 @@ router.get('/f/simi', async(req, res, next) => {
   if(!query) return res.json(loghandler.notquery)
   
   if(listkey.includes(apikey)){
-  fetch(encodeURI(`https://api.zeks.xyz/api/soundcloud?apikey=xF6BnMYUJzaPtRj7iOIDS9FCFvJ&url=${query}`))
+  fetch(encodeURI(`https://api.zeks.xyz/api/simi?apikey=xF6BnMYUJzaPtRj7iOIDS9FCFvJ&text=${query}`))
   .then(response => response.json())
         .then(hasil => {
 
@@ -2105,7 +2081,7 @@ router.get('/textpro/natural-leaves', async(req, res, next) => {
   }
 });
 
-router.get('/textpro/matrix', async(req, res, next) => {
+router.get('/textpro/harry-potter', async(req, res, next) => {
 
   const apikey = req.query.apikey;
 
