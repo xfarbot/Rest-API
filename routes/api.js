@@ -237,7 +237,7 @@ router.get('/f/simi', async(req, res, next) => {
   .then(response => response.json())
         .then(hasil => {
 
-        var result = hasil.data;
+        var result = hasil.result;
              res.json({
                  status : true,
                  creator : `${creator}`,
@@ -486,6 +486,26 @@ router.get('/stalk/ig', async(req, res, next) => {
     }
 });
 
+router.get('/info/gempa', async (req, res, next) => {
+	        var Apikey = req.query.apikey
+
+		if (!Apikey) return res.json(loghandler.notparam)
+		if (listkey.includes(Apikey)){
+		Gempa()
+		.then(result => {
+			res.json({
+				creator: creator,
+				result
+			})
+		})
+		.catch(e => {
+			console.log('Error :', color(e, 'red'))
+			res.json(loghandler.error)
+		})
+	} else {
+res.json(loghandler.invalidKey)
+}
+})
 
 router.get('/stalk/npm', async (req, res, next) => {
         var Apikey = req.query.apikey,
