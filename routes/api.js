@@ -225,14 +225,39 @@ router.get('/music/joox', async(req, res, next) => {
   }
 });
 
-router.get('/music/spotify', async(req, res, next) => {
+router.get('/music/soundcloud', async(req, res, next) => {
   const apikey = req.query.apikey;
   const query = req.query.query;
   if(!apikey) return res.json(loghandler.notparam)
   if(!query) return res.json(loghandler.notquery)
   
   if(listkey.includes(apikey)){
-  fetch(encodeURI(`https://alpin-api-2021.herokuapp.com/api/spotify?apikey=alpin1&q=${query}`))
+  fetch(encodeURI(`https://api.zeks.xyz/api/soundcloud?apikey=xF6BnMYUJzaPtRj7iOIDS9FCFvJ&url=${query}`))
+  .then(response => response.json())
+        .then(hasil => {
+
+        var result = hasil.data;
+             res.json({
+                 status : true,
+                 creator : `${creator}`,
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+  res.json(loghandler.invalidKey)
+}
+})
+router.get('/f/simi', async(req, res, next) => {
+  const apikey = req.query.apikey;
+  const query = req.query.query;
+  if(!apikey) return res.json(loghandler.notparam)
+  if(!query) return res.json(loghandler.notquery)
+  
+  if(listkey.includes(apikey)){
+  fetch(encodeURI(`https://api.zeks.xyz/api/soundcloud?apikey=xF6BnMYUJzaPtRj7iOIDS9FCFvJ&url=${query}`))
   .then(response => response.json())
         .then(hasil => {
 
@@ -559,7 +584,7 @@ res.json(loghandler.invalidKey)
 }
 })
 
-router.get('/random/berita', async (req, res, next) => {
+router.get('/info/berita', async (req, res, next) => {
         var Apikey = req.query.apikey
             
 	if(!Apikey) return res.json(loghandler.notparam)
@@ -725,39 +750,30 @@ router.get('/tools/wpuser', async(req, res, next) => {
 
 router.get('/info/cuaca', async(req, res, next) => {
   const apikey = req.query.apikey;
-  const kota = req.query.kota;
+  const url = req.query.url;
   
+  if(!url) return res.json(loghandler.noturl)
   if(!apikey) return res.json(loghandler.notparam)
-  if(!kota) return res.json({status: false, code: 406, message: 'masukkan parameter kota'})
-  if(listkey.includes(apikey)) {
-    Cuaca(kota)
-    .then((data) => {
-      res.json(data)
-    })
+  
+  if(listkey.includes(apikey)){
+    fetch(encodeURI(`http://docs-jojo.herokuapp.com/api/cuaca?q=${url}`))
+    .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+               status: true,
+               code: 200,
+               creator: `${creator}`,
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
   } else {
     res.json(loghandler.invalidKey)
   }
-})
-router.get('/info/gempa', async (req, res, next) => {
-	        var Apikey = req.query.apikey
-
-		if (!Apikey) return res.json(loghandler.notparam)
-		if (listkey.includes(Apikey)){
-		Gempa()
-		.then(result => {
-			res.json({
-				creator: creator,
-				result
-			})
-		})
-		.catch(e => {
-			console.log('Error :', color(e, 'red'))
-			res.json(loghandler.error)
-		})
-	} else {
-res.json(loghandler.invalidKey)
-}
-})
+});
 
 
 router.get('/muslim/kisahnabi', async (req, res, next) => {
@@ -2089,6 +2105,62 @@ router.get('/textpro/natural-leaves', async(req, res, next) => {
   }
 });
 
+router.get('/textpro/matrix', async(req, res, next) => {
+
+  const apikey = req.query.apikey;
+
+  const text = req.query.text;
+  
+  if(!apikey) return res.json(loghandler.notparam)
+  if(!text) return res.json(loghandler.nottext)
+  
+  if(listkey.includes(apikey)){
+    zrapi 
+  .textpro("https://textpro.me/create-harry-potter-text-effect-online-1025.html", [
+    text,
+  ])
+  .then((data) => {
+    res.json({
+      status: true,
+      code: 200,
+      creator: `${creator}`,
+      result: data
+    })
+  })
+  .catch((err) => console.log(err));
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+});
+
+router.get('/textpro/matrix', async(req, res, next) => {
+
+  const apikey = req.query.apikey;
+
+  const text = req.query.text;
+  
+  if(!apikey) return res.json(loghandler.notparam)
+  if(!text) return res.json(loghandler.nottext)
+  
+  if(listkey.includes(apikey)){
+    zrapi 
+  .textpro("https://textpro.me/matrix-style-text-effect-online-884.html", [
+    text,
+  ])
+  .then((data) => {
+    res.json({
+      status: true,
+      code: 200,
+      creator: `${creator}`,
+      result: data
+    })
+  })
+  .catch((err) => console.log(err));
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+});
+
 router.get('/textpro/logo-wolf2', async(req, res, next) => {
 
   const apikey = req.query.apikey;
@@ -2321,7 +2393,7 @@ router.get('/textpro/3d-gradient', async(req, res, next) => {
   }
 });
 
-router.get('/textpro/porn-hub', async(req, res, next) => {
+router.get('/textpro/youtub-hub', async(req, res, next) => {
 
   const apikey = req.query.apikey;
 
@@ -2335,6 +2407,66 @@ router.get('/textpro/porn-hub', async(req, res, next) => {
   if(listkey.includes(apikey)){
     zrapi 
   .textpro("https://textpro.me/pornhub-style-logo-online-generator-free-977.html", [
+    text, text2
+  ])
+  .then((data) => {
+    res.json({
+      status: true,
+      code: 200,
+      creator: `${creator}`,
+      result: data
+    })
+  })
+  .catch((err) => console.log(err));
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+});
+
+router.get('/textpro/youtub-hub', async(req, res, next) => {
+
+  const apikey = req.query.apikey;
+
+  const text = req.query.text1;
+  const text2 = req.query.text2;
+  
+  if(!apikey) return res.json(loghandler.notparam)
+  if(!text) return res.json(loghandler.nottext1)
+  if(!text2) return res.json(loghandler.nottext2)
+  
+  if(listkey.includes(apikey)){
+    zrapi 
+  .textpro("https://textpro.me/pornhub-style-logo-online-generator-free-977.html", [
+    text, text2
+  ])
+  .then((data) => {
+    res.json({
+      status: true,
+      code: 200,
+      creator: `${creator}`,
+      result: data
+    })
+  })
+  .catch((err) => console.log(err));
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+});
+
+router.get('/textpro/glitch2', async(req, res, next) => {
+
+  const apikey = req.query.apikey;
+
+  const text = req.query.text1;
+  const text2 = req.query.text2;
+  
+  if(!apikey) return res.json(loghandler.notparam)
+  if(!text) return res.json(loghandler.nottext1)
+  if(!text2) return res.json(loghandler.nottext2)
+  
+  if(listkey.includes(apikey)){
+    zrapi 
+  .textpro("https://textpro.me/create-a-glitch-text-effect-online-free-1026.html", [
     text, text2
   ])
   .then((data) => {
