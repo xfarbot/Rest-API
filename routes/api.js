@@ -1254,8 +1254,8 @@ router.get('/wallpaper/programming', async (req, res, next) => {
   const Progam = JSON.parse(fs.readFileSync(__path +'/data/Programming.json'));
   const randProgam = Progam[Math.floor(Math.random() * Progam.length)];
   data = await fetch(randProgam).then(v => v.buffer())
-  await fs.writeFileSync(__path +'/tmp/Programming.jpeg', data)
-  res.sendFile(__path +'/tmp/Programming.jpeg')
+  await fs.writeFileSync(__path +'/tmp/Programming.jpg', data)
+  res.sendFile(__path +'/tmp/Programming.jpg')
 } else {
 res.json(loghandler.invalidKey)
 }
@@ -1271,8 +1271,8 @@ router.get('/wallpaper/pegunungan', async (req, res, next) => {
   const Mount = JSON.parse(fs.readFileSync(__path +'/data/Mountain.json'));
   const randMount = Mount[Math.floor(Math.random() * Mount.length)];
   data = await fetch(randMount).then(v => v.buffer());
-  await fs.writeFileSync(__path +'/tmp/Mountain.jpeg', data)
-  res.sendFile(__path+ '/tmp/Mountain.jpeg');
+  await fs.writeFileSync(__path +'/tmp/Mountain.jpg', data)
+  res.sendFile(__path+ '/tmp/Mountain.jpg');
 } else {
 res.json(loghandler.invalidKey)
 }
