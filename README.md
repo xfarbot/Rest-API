@@ -19,6 +19,6 @@
 > git commit "."
 > git push heroku master
 ```
-#jika ada perubahan , silahkan ikuti tumtor diatas secara berulang
+jika ada perubahan , silahkan ikuti tumtor diatas secara berulang
 <h3>Thanks to:</h3>
 <p>- Tobz API<br>- Zahirr<br>- Itskhyaa<br>- Jojo API<br>- Zeks API</p>
