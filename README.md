@@ -11,13 +11,6 @@
 <h2>Camra push ke heroku</h2>
 ```bash
 > cd Rest-API
-> heroku login
-> git init
-> git remote: -a Situs yang lu buat misal
-> git remote: -a studio-pedeka
-> git add "."
-> git commit "."
-> git push heroku master
 ```
 jika ada perubahan , silahkan ikuti tumtor diatas secara berulang
 <h3>Thanks to:</h3>
