@@ -3,8 +3,5 @@
 
 
 <h3>Thanks to:</h3>
-<p>- Tobz API</p>
-<p>- Zahirr</p>
-<p>- Itskhyaa</p>
-<p>- Jojo API</p>
-<p>- Zeks API</p>
+<p>- Tobz API<br>- Zahirr<br>- Itskhyaa<br>- Jojo API<br>- Zeks API</p>
+
