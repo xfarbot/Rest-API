@@ -3,6 +3,13 @@
 <a href="https://api.whatsapp.com/send/?phone=6285730265648&text=assalamualaikum&app_absent=0">CHAT VIKO</a>
 
 <h2>TUMTOR DOWNLOAD</h2>
-git clone https://github.com/vikodk67/Rest-API.git
+### Install
+Clone this project
+
+```bash
+> pkg install git
+> git clone https://github.com/vikodk67/Rest-API.git
+> cd Rest-API
+```
 <h3>Thanks to:</h3>
 <p>- Tobz API<br>- Zahirr<br>- Itskhyaa<br>- Jojo API<br>- Zeks API</p>
