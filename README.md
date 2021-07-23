@@ -10,13 +10,13 @@
 ```
 <h2>Camra push ke heroku</h2>
 <p>
-> cd Rest-API
-> git init
-> git remote: -a Situs yang lu buat misal
-> git remote: -a studio-pedeka
-> git add "."
-> git commit "."
-> git push heroku master
+> cd Rest-API<br>
+> git init<br>
+> git remote: -a Situs yang lu buat misal<br>
+> git remote: -a studio-pedeka<br>
+> git add "."<br>
+> git commit "."<br>
+> git push heroku master<br>
 </p>
 <p>jika ada perubahan , silahkan ikuti tumtor diatas secara berulang</p>
 <h3>Thanks to:</h3>
