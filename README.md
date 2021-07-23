@@ -3,13 +3,22 @@
 <a href="https://api.whatsapp.com/send/?phone=6285730265648&text=assalamualaikum&app_absent=0">CHAT VIKO</a>
 
 <h2>TUMTOR DOWNLOAD</h2>
-### Install
-Clone this project
 
 ```bash
-> pkg install git
 > git clone https://github.com/vikodk67/Rest-API.git
 > cd Rest-API
 ```
+<h2>Camra push ke heroku</h2>
+```bash
+> cd Rest-API
+> heroku login
+> git init
+> git remote: -a Situs yang lu buat misal
+> git remote: -a studio-pedeka
+> git add "."
+> git commit "."
+> git push heroku master
+```
+#jika ada perubahan , silahkan ikuti tumtor diatas secara berulang
 <h3>Thanks to:</h3>
 <p>- Tobz API<br>- Zahirr<br>- Itskhyaa<br>- Jojo API<br>- Zeks API</p>
