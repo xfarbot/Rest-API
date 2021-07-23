@@ -9,10 +9,15 @@
 > cd Rest-API
 ```
 <h2>Camra push ke heroku</h2>
-```bash
+<p>
 > cd Rest-API
 > git init
-```
+> git remote: -a Situs yang lu buat misal
+> git remote: -a studio-pedeka
+> git add "."
+> git commit "."
+> git push heroku master
+</p>
 <p>jika ada perubahan , silahkan ikuti tumtor diatas secara berulang</p>
 <h3>Thanks to:</h3>
 <p>- Tobz API<br>- Zahirr<br>- Itskhyaa<br>- Jojo API<br>- Zeks API</p>
