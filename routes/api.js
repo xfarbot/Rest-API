@@ -580,6 +580,33 @@ res.json(loghandler.invalidKey)
 }
 })
 
+router.get('/random/wallpaper', async(req, res, next) => {
+  const apikey = req.query.apikey;
+  const url = req.query.url;
+  
+  if(!url) return res.json(loghandler.noturl)
+  if(!apikey) return res.json(loghandler.notparam)
+  
+  if(listkey.includes(apikey)){
+    fetch(encodeURI(`https://docs-jojo.herokuapp.com/api/wallpaper_hd?q=${url}`))
+    .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+               status: true,
+               code: 200,
+               creator: `${creator}`,
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+});
+
 router.get('/info/berita', async (req, res, next) => {
         var Apikey = req.query.apikey
             
