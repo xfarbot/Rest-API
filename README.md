@@ -11,7 +11,6 @@
 <h2>Camra push ke heroku</h2>
 ```bash
 > cd Rest-API
-> heroku login
 > git init
 ```
 <p>jika ada perubahan , silahkan ikuti tumtor diatas secara berulang</p>
