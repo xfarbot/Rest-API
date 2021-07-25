@@ -263,7 +263,7 @@ router.get('/f/botkuh', async(req, res, next) => {
   .then(response => response.json())
         .then(hasil => {
 
-        var result = hasil.result;
+        var result = hasil.jawab;
              res.json({
                  status : true,
                  creator : `${creator}`,
