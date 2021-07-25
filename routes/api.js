@@ -607,6 +607,29 @@ router.get('/random/wallpaper', async(req, res, next) => {
   }
 });
 
+router.get('/info/berita2', async (req, res, next) => {
+        var Apikey = req.query.apikey
+            
+	if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){
+
+       fetch(encodeURI(`http://docs-jojo.herokuapp.com/api/cnn-detail?url=https://www.cnnindonesia.com/internasional/20210407142558-106-627020/10-menteri-thailand-isolasi-usai-kontak-dengan-pasien-corona`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 creator : `${creator}`,
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+res.json(loghandler.invalidKey)
+}
+})
+
 router.get('/info/berita', async (req, res, next) => {
         var Apikey = req.query.apikey
             
