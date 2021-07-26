@@ -1293,7 +1293,8 @@ router.get('/wallpaper/teknologi', async (req, res, next) => {
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
 
-const Techno = JSON.parse(fs.readFileSync(__path +'/data/Technology.json'));
+const kuntul = fetch('https://studiovdk.herokuapp.com/api/Technology.json')
+const Techno = kuntul
 const randTech = Techno[Math.floor(Math.random() * Techno.length)]
 //tansole.log(randTech)
 data = await fetch(randTech).then(v => v.buffer())
