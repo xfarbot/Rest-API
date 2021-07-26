@@ -1293,10 +1293,9 @@ router.get('/wallpaper/teknologi', async (req, res, next) => {
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
 
-fetch(encodeURI(`https://studiovdk.herokuapp.com/api/Technology.json`))
-        .then(response => response.json())
-        .then(data => {
-        const Techno = data;
+const tekno = fetch(encodeURI(`https://studiovdk.herokuapp.com/api/Technology.json`))
+.then(response => response.json())
+const Techno = tekno
 const randTech = Techno[Math.floor(Math.random() * Techno.length)]
 //tansole.log(randTech)
 data = await fetch(randTech).then(v => v.buffer())
