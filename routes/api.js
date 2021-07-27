@@ -1297,14 +1297,11 @@ router.get('/wallpaper/teknologi', async (req, res, next) => {
        fetch(encodeURI(`http://studiovdk.herokuapp.com/api/Technology.json`))
         .then(response => response.json())
         .then(data => {
-        var randprog = data;
-        const randProg = Progam[Math.floor(Math.random() * Progam.length)];
-  data = fetch(randProgam).then(v => v.buffer())
-  await fs.writeFileSync(__path +'/tmp/Programming.jpeg', data)
-  res.sendFile(__path +'/tmp/Programming.jpeg')
+        var result = data;
+	 result   
          })
          .catch(e => {
-         	res.json(loghandler.error)
+        res.json(loghandler.error)
 })
 } else {
 res.json(loghandler.invalidKey)
