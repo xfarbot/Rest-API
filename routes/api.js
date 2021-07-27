@@ -1289,17 +1289,23 @@ res.json(loghandler.invalidKey)
 })
 
 router.get('/wallpaper/teknologi', async (req, res, next) => {
-        const Apikey = req.query.apikey;
+        var Apikey = req.query.apikey
+            
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
 
-var tekno = fetch(encodeURI(`https://studiovdk.herokuapp.com/api/Technology.json`))
-const Techno = tekno
-const randTech = Techno[Math.floor(Math.random() * Techno.length)]
-//tansole.log(randTech)
-data = await fetch(randTech).then(v => v.buffer())
-await fs.writeFileSync(__path +'/tmp/techno.jpeg', data)
-res.sendFile(__path +'/tmp/techno.jpeg')
+       fetch(encodeURI(`http://studiovdk.herokuapp.com/api/Technology.json`))
+        .then(response => response.json())
+        .then(data => {
+        const randprog = data;
+        const randProg = Progam[Math.floor(Math.random() * Progam.length)];
+  data = await fetch(randProgam).then(v => v.buffer())
+  await fs.writeFileSync(__path +'/tmp/Programming.jpeg', data)
+  res.sendFile(__path +'/tmp/Programming.jpeg')
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
 } else {
 res.json(loghandler.invalidKey)
 }
