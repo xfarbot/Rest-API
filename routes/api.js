@@ -150,7 +150,7 @@ loghandler = {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'apikey invalid atau kamu belum membelinya'
+        result: 'apikey invalid, tidak punya apikey? chat viko wa.me/6281515958390'
     },
     invalidlink: {
         status: false,
@@ -165,7 +165,7 @@ loghandler = {
     error: {
         status: false,
         creator: `${creator}`,
-        message: 'EROR, tidak dapat memanggil'
+        result: 'EROR, terjadi kesalahan oleh sistem viko-api.herokuapp.com'
     }
 }
 
