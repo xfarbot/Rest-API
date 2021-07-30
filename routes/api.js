@@ -585,6 +585,28 @@ res.json(loghandler.invalidKey)
 }
 })
 
+router.get('/random/cerpen', async (req, res, next) => {
+        var Apikey = req.query.apikey
+            
+	if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){
+
+       fetch(encodeURI(`https://fdciabdul.tech/api/randomcerpen/`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data.cerpen;
+             res.json({
+                 creator : `${creator}`,
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+res.json(loghandler.invalidKey)
+}
+})
 
 router.get('/random/quotes', async (req, res, next) => {
         var Apikey = req.query.apikey
