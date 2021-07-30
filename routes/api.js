@@ -1742,12 +1742,18 @@ router.get('/anime/kusonime', async (req, res, next) => {
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
 	if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
-       fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/kusonime?search=${search}`))
+       fetch(encodeURI(`https://mhankbarbar.herokuapp.com/api/kuso?q=${search}`))
         .then(response => response.json())
         .then(data => {
-        var result = data;
+        var info = data.info;
+	var sinopsis = data.sinopsis
+	var link = data.link_dl
+	var thumb = data.thumb
              res.json({
-                 result
+                 info
+		 sinopsis
+		 link
+		 thumb
              })
          })
          .catch(e => {
