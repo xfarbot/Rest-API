@@ -665,10 +665,10 @@ router.get('/info/berita2', async (req, res, next) => {
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
 
-       fetch(encodeURI(`http://docs-jojo.herokuapp.com/api/cnn-detail?url=https://www.cnnindonesia.com/internasional/20210407142558-106-627020/10-menteri-thailand-isolasi-usai-kontak-dengan-pasien-corona`))
+       fetch(encodeURI(`https://newsapi.org/v2/top-headlines?country=id&apiKey=c0d2a1336d194743955b4170bd86f7af`))
         .then(response => response.json())
         .then(data => {
-        var result = data;
+        var result = data.articles;
              res.json({
                  creator : `${creator}`,
                  result
