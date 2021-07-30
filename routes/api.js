@@ -1576,10 +1576,10 @@ router.get('/music/chordlagu', async (req, res, next) => {
 	if(listkey.includes(Apikey)){
         if(!lagu) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
-       fetch(encodeURI(`http://docs-jojo.herokuapp.com/api/chord?q=${lagu}`))
+       fetch(encodeURI(`https://mhankbarbar.herokuapp.com/api/chord?q=${lagu}`))
         .then(response => response.json())
         .then(data => {
-        var result = data;
+        var result = data.result;
              res.json({
                  result
              })
