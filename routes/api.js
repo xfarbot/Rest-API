@@ -225,6 +225,31 @@ router.get('/music/joox', async(req, res, next) => {
   }
 });
 
+router.get('/pint/pinterest', async(req, res, next) => {
+  const apikey = req.query.apikey;
+  const query = req.query.query;
+  if(!apikey) return res.json(loghandler.notparam)
+  if(!query) return res.json(loghandler.notquery)
+  
+  if(listkey.includes(apikey)){
+  fetch(encodeURI(`https://fdciabdul.tech/api/pinterest?keyword=${query}`))
+  .then(response => response.json())
+        .then(hasil => {
+
+        var result = hasil;
+             res.json({
+                 status : true,
+                 creator : `${creator}`,
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+  res.json(loghandler.invalidKey)
+}
+})
 
 router.get('/f/simi', async(req, res, next) => {
   const apikey = req.query.apikey;
