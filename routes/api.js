@@ -1745,15 +1745,9 @@ router.get('/anime/kusonime', async (req, res, next) => {
        fetch(encodeURI(`https://mhankbarbar.herokuapp.com/api/kuso?q=${search}`))
         .then(response => response.json())
         .then(data => {
-        var info = data.info;
-	var sinopsis = data.sinopsis
-	var link = data.link_dl
-	var thumb = data.thumb
+        var result = data;
              res.json({
-                 info
-		 sinopsis
-		 link
-		 thumb
+                 result
              })
          })
          .catch(e => {
