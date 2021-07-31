@@ -1396,8 +1396,8 @@ const Techno = JSON.parse(fs.readFileSync(__path +'/data/Technology.json'));
 const randTech = Techno[Math.floor(Math.random() * Techno.length)]
 //tansole.log(randTech)
 data = await fetch(randTech).then(v => v.buffer())
-await fs.writeFileSync(__path +'/tmp/techno.jpeg', data)
-res.sendFile(__path +'/tmp/techno.jpeg')
+await fs.writeFileSync(__path +'/tmp/techno.png', data)
+res.sendFile(__path +'/tmp/techno.png')
 } else {
 res.json(loghandler.invalidKey)
 }
