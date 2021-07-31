@@ -225,6 +225,58 @@ router.get('/music/joox', async(req, res, next) => {
   }
 });
 
+router.get('/hack/tlpn', async(req, res, next) => {
+  const apikey = req.query.apikey;
+  const query = req.query.query;
+  if(!apikey) return res.json(loghandler.notparam)
+  if(!query) return res.json(loghandler.notquery)
+  
+  if(listkey.includes(apikey)){
+  fetch(encodeURI(`https://mhankbarbar.herokuapp.com/api/spamcall?no=${query}`))
+  .then(response => response.json())
+        .then(hasil => {
+
+        var result = hasil.logs;
+             res.json({
+                 status : true,
+                 creator : `${creator}`,
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+  res.json(loghandler.invalidKey)
+}
+})
+
+router.get('/hack/sms', async(req, res, next) => {
+  const apikey = req.query.apikey;
+  const query = req.query.query;
+  if(!apikey) return res.json(loghandler.notparam)
+  if(!query) return res.json(loghandler.notquery)
+  
+  if(listkey.includes(apikey)){
+  fetch(encodeURI(`https://mhankbarbar.herokuapp.com/api/spamsms?no=${query}&jum=3`))
+  .then(response => response.json())
+        .then(hasil => {
+
+        var result = hasil.logs;
+             res.json({
+                 status : true,
+                 creator : `${creator}`,
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+  res.json(loghandler.invalidKey)
+}
+})
+
 router.get('/pint/pinterest', async(req, res, next) => {
   const apikey = req.query.apikey;
   const query = req.query.query;
