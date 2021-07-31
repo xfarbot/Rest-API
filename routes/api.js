@@ -1391,13 +1391,16 @@ router.get('/wallpaper/teknologi', async (req, res, next) => {
         const Apikey = req.query.apikey;
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-
-const Techno = JSON.parse(fs.readFileSync(__path +'/data/Technology.json'));
+fetch(`https://studiovdk.herokuapp.com/api/Technology.json`)
+    .then(response => response.json())
+    .then(data => {
+const Techno = data
 const randTech = Techno[Math.floor(Math.random() * Techno.length)]
 //tansole.log(randTech)
 data = await fetch(randTech).then(v => v.buffer())
-await fs.writeFileSync(__path +'/tmp/techno.png', data)
-res.sendFile(__path +'/tmp/techno.png')
+await fs.writeFileSync(__path +'/tmp/techno.jpeg', data)
+res.sendFile(__path +'/tmp/techno.jpeg')
+})	
 } else {
 res.json(loghandler.invalidKey)
 }
