@@ -485,31 +485,28 @@ res.json(loghandler.invalidKey)
 })
 
 router.get('/download/ig', async(req, res, next) => {
-  const url = req.query.url;
-  const apikey = req.query.apikey;
-  if(!url) return res.json(loghandler.noturl)
-  if(!apikey) return res.json(loghandler.notparam)
-  if(listkey.includes(apikey)){
-  igDownload(url)
-    .then((data) => {
-      result = {
-        status: true,
-        code: 200,
-        creator: `${creator}`,
-        id: data.id,
-        shortCode: data.shortCode,
-        caption: data.caption,
-        result: data.url
-      }
-      res.json(result)
-    })
-    .catch((err) => {
-      res.json(err);
-    });
-    } else {
-    	res.json(loghandler.invalidKey)
-    }
-});
+    var Apikey = req.query.apikey,
+        url = req.query.url
+
+	if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){
+     if (!url) return res.json(loghandler.noturl)
+     request(`https://mhankbarbar.herokuapp.com/api/ig?url=${url}`, function (error, response, body) {
+         try {
+             res.json({
+                 status : true,
+                 creator : `${creator}`,
+                 result : `${body}`
+             })
+         } catch (e) {
+             console.log('Error :', color(e,'red'))
+             res.json(loghandler.invalidlink)
+         }
+     })
+   } else {
+res.json(loghandler.invalidKey)
+}
+})
 
 router.get('/download/fb', async (req, res, next) => {
 
