@@ -568,27 +568,30 @@ res.json(loghandler.invalidKey)
 })
 
 router.get('/stalk/ig', async(req, res, next) => {
-  const username = req.query.username;
   const apikey = req.query.apikey;
-  if(!username) return res.json(loghandler.notusername)
+  const query = req.query.query;
   if(!apikey) return res.json(loghandler.notparam)
+  if(!query) return res.json(loghandler.notquery)
+  
   if(listkey.includes(apikey)){
-  igStalk(username)
-    .then((result) => {
-      res.json({
-        status : true,
-        code: 200,
-        creator : `${creator}`,
-        result
-      });
-    })
-    .catch((err) => {
-      res.json(err);
-    });
-    } else {
-    	res.json(loghandler.invalidKey)
-    }
-});
+  fetch(encodeURI(`https://mhankbarbar.herokuapp.com/api/stalk?username=${query}`))
+  .then(response => response.json())
+        .then(hasil => {
+
+        var result = hasil;
+             res.json({
+                 status : true,
+                 creator : `${creator}`,
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+  res.json(loghandler.invalidKey)
+}
+})
 
 router.get('/info/gempa', async (req, res, next) => {
 	        var Apikey = req.query.apikey
