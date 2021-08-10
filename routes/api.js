@@ -666,7 +666,7 @@ router.get('/random/quotes', async (req, res, next) => {
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
 
-       fetch(encodeURI(`https://api.zeks.xyz/api/quote?apikey=apivinz`))
+       fetch(encodeURI(`https://api.zeks.xyz/api/quote?apikey=pikodeka67`))
         .then(response => response.json())
         .then(data => {
         var result = data;
