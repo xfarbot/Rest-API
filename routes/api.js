@@ -643,10 +643,10 @@ router.get('/random/cerpen', async (req, res, next) => {
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
 
-       fetch(encodeURI(`http://docs-jojo.herokuapp.com/api/cerpen`))
+       fetch(encodeURI(`http://viko-cerpenmu.herokuapp.com/`))
         .then(response => response.json())
         .then(data => {
-        var result = data.result;
+        var result = data;
              res.json({
                  creator : `${creator}`,
                  result
