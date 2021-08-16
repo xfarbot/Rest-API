@@ -1377,27 +1377,39 @@ router.get('/wallpaper/cyberspace', async (req, res, next) => {
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
 
-  const Cc = JSON.parse(fs.readFileSync(__path +'/data/CyberSpace.json'));
-  const randCc = Cc[Math.floor(Math.random() * Cc.length)];
-  data = await fetch(randCc).then(v => v.buffer())
-await fs.writeFileSync(__path +'/tmp/CyberSpace.jpeg', data)
-		res.sendFile(__path +'/tmp/CyberSpace.jpeg')
+       fetch(encodeURI(`https://privatasw.herokuapp.com/Lujomloajg/cybertod`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data.result;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
 } else {
 res.json(loghandler.invalidKey)
 }
 })
 
 router.get('/wallpaper/teknologi', async (req, res, next) => {
-        const Apikey = req.query.apikey;
+        var Apikey = req.query.apikey
+            
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
 
-const Techno = JSON.parse(fs.readFileSync(__path +'/data/Technology.json'));
-const randTech = Techno[Math.floor(Math.random() * Techno.length)]
-//tansole.log(randTech)
-data = await fetch(randTech).then(v => v.buffer())
-await fs.writeFileSync(__path +'/tmp/techno.jpeg', data)
-res.sendFile(__path +'/tmp/techno.jpeg')
+       fetch(encodeURI(`https://privatasw.herokuapp.com/cwelumanasu/teknologi`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data.result;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
 } else {
 res.json(loghandler.invalidKey)
 }
@@ -1409,11 +1421,17 @@ router.get('/wallpaper/muslim', async (req, res, next) => {
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
 
-  const Muslim = JSON.parse(fs.readFileSync(__path +'/data/Islamic.json'));
-  const randMuslim = Muslim[Math.floor(Math.random() * Muslim.length)];
-  data = await fetch(randMuslim).then(v => v.buffer());
-  await fs.writeFileSync(__path +'/tmp/muslim.jpeg', data)
-  res.sendFile(__path +'/tmp/muslim.jpeg');
+       fetch(encodeURI(`https://privatasw.herokuapp.com/tobatboy/islam`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data.result;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
 } else {
 res.json(loghandler.invalidKey)
 }
