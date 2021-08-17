@@ -310,7 +310,7 @@ router.get('/f/simi', async(req, res, next) => {
   if(!query) return res.json(loghandler.notquery)
   
   if(listkey.includes(apikey)){
-  fetch(encodeURI(`https://api.zeks.xyz/api/simi?apikey=xF6BnMYUJzaPtRj7iOIDS9FCFvJ&text=${query}`))
+  fetch(encodeURI(`https://api.zeks.xyz/api/simi?apikey=pikodeka67&text=${query}`))
   .then(response => response.json())
         .then(hasil => {
 
