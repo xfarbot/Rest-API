@@ -310,11 +310,11 @@ router.get('/f/simi', async(req, res, next) => {
   if(!query) return res.json(loghandler.notquery)
   
   if(listkey.includes(apikey)){
-  fetch(encodeURI(`https://api.zeks.xyz/api/simi?apikey=pikodeka67&text=${query}`))
+  fetch(encodeURI(`https://api.simsimi.net/v1/?text=${query}&lang=id&cf=false`))
   .then(response => response.json())
         .then(hasil => {
 
-        var result = hasil.result;
+        var result = hasil.success;
              res.json({
                  status : true,
                  creator : `${creator}`,
