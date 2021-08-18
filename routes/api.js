@@ -149,8 +149,8 @@ loghandler = {
     invalidKey: {
         status: false,
         creator: `${creator}`,
-        code: 406,
-        result: 'apikey invalid, tidak punya apikey? chat viko wa.me/6281515958390'
+        code: 404,
+        result: 'apikey tidak ditemukan viko-api.herokuapp.com'
     },
     invalidlink: {
         status: false,
@@ -165,7 +165,7 @@ loghandler = {
     error: {
         status: false,
         creator: `${creator}`,
-        result: 'EROR, terjadi kesalahan oleh sistem viko-api.herokuapp.com'
+        result: '500 internal server error viko-api.herokuapp.com'
     }
 }
 
@@ -2936,7 +2936,7 @@ router.get('/cekapikey', async(req, res, next) => {
       status: 'active',
       creator: `${creator}`,
       apikey: `${apikey}`,
-      message: 'APIKEY AKTIF'
+      result: 'APIKEY AKTIF, selamat bersenang senang:)'
     })
   } else {
     res.json(loghandler.invalidKey)
