@@ -251,6 +251,29 @@ router.get('/hack/tlpn', async(req, res, next) => {
 }
 })
 
+router.get('/random/informasi', async (req, res, next) => {
+        var Apikey = req.query.apikey
+            
+	if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){
+
+       fetch(encodeURI(`http://studiovdk.herokuapp.com/api/ingfoku.php`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data.result;
+             res.json({
+                 creator : `${creator}`,
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+res.json(loghandler.invalidKey)
+}
+})
+
 router.get('/hack/sms', async(req, res, next) => {
   const apikey = req.query.apikey;
   const query = req.query.query;
