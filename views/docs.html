@@ -2,23 +2,41 @@
 <html>
 
 <head>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>FREE REST-API VIKO</title>
+  <title>StudioVDK - API FREE</title>
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="css/ruang-admin.min.css" rel="stylesheet">
+  <script src="https://studiovdk.herokuapp.com/main-menu/databs.js"></script>
   <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+  <script src="https://studiovdk.herokuapp.com/main-menu/berita.js"></script>
+  <style>
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
 </head>
 
 <body id="page-top">
   <div id="wrapper">
     <!-- Sidebar -->
-    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center bg-info" href="http://studiovdk.herokuapp.com/" style="	background-image: url(https://pingendo.com/site-assets/cover.jpg);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+ <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center bg-info" href="http://studiovdk.herokuapp.com/" style="  background-image: url(https://pingendo.com/site-assets/cover.jpg);  background-position: top left;  background-size: 100%;  background-repeat: repeat;">
         <div class="sidebar-brand-icon">
 <lord-icon
     src="https://cdn.lordicon.com/xxtkutpo.json"
@@ -33,7 +51,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="http://studiovdk.herokuapp.com/main-menu/index.html">
           <i class="fas fa-fw fa-code"></i>
-          <span>Beranda</span></a>
+          <span>Dasboard</span></a>
       </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading"> API Features </div>
@@ -308,22 +326,18 @@
     </ul>
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
-      <div id="content" class="bg-info">
+      <div id="content" style="	background-image: url(https://pingendo.com/site-assets/cover.jpg);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
         <!-- TopBar -->
-        <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top bg-info" style="	background-image: url(https://pingendo.com/site-assets/cover.jpg);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+        <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top" style="background-image: url(&quot;https://pingendo.com/site-assets/cover.jpg&quot;); background-position: left top; background-size: 100%; background-repeat: repeat;">
           <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown no-arrow">
-            </li>
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              </a>
               <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                 <form class="navbar-search">
                   <div class="input-group">
-                    <input type="text" class="form-control bg-light border-1 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" style="border-color: #3dffe2;">
+                    <input type="text" class="form-control bg-light border-1 small" placeholder="What do you want to look for?" aria-label="Search" aria-describedby="basic-addon2" style="border-color: #3f51b5;">
                     <div class="input-group-append">
                       <button class="btn btn-primary" type="button">
                         <i class="fas fa-search fa-sm"></i>
@@ -333,11 +347,42 @@
                 </form>
               </div>
             </li>
-    <style>
+            <div class="topbar-divider d-none d-sm-block"></div>
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img class="img-profile rounded-circle" src="https://i.ibb.co/mRgyq9q/logo2.png" style="max-width: 60px">
+                <span class="ml-2 d-none d-lg-inline text-white small">Viko DK</span>
+                <marquee class="li" id="informasi" direction="left" onmouseover="stop()" onmouseout="start()"></marquee>
+              </a>
+                         <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i>
+                <span class="badge badge-danger badge-counter">1+</span>
+              </a>
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                <h6 class="dropdown-header"> Informasi </h6>
+                <a class="dropdown-item d-flex align-items-right" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-primary">
+                      <i class="fas fa-file-alt text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">Owner</div>
+                     <span id="crito">Tidak ada info</span>
+                  </div>
+                </a>
+              </div>
+            </li>
+            </li>
+          </ul>
+        </nav>
+        <!-- Topbar -->
+        <!-- Container Fluid-->
+        <style>
 .li {
-  color: white;
   float: left;
-  width: 100%;
+  width: 98%;
   padding: 1%;
   margin: 1% 10%;
   height: 40px;
@@ -345,68 +390,57 @@
   box-shadow: 0 0.1em 0.5em;
 }
         </style>
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              </a>
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-              </div>
-            </li>
-                                   <marquee class="li" id="informasi" direction="left" onmouseover="stop()" onmouseout="start()">Selamat datang di free rest api viko, follow my instagram Vikodwik_rmx, github vikodk67, facebook viko dwi kurniawan. programer abal abal copy paste bisa ngoding si tpi males</marquee>
-            <div class="topbar-divider d-none d-sm-block"></div>
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img class="img-profile rounded-circle" src="https://i.ibb.co/mRgyq9q/logo2.png" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">Viko DK</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <!-- Container Fluid-->
-      <div class="container-fluid bg-info" id="container-wrapper">
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-          <h1 class="text-xs font-weight-bold text-uppercase text-center mb-1">Rest APIs - Viko</h1>
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="http://studiovdk.herokuapp.com/">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Beranda</li>
-          </ol>
-        </div>
-          <div class="col-lg-7">
-            <div class="card mb-4">
-              <div class="card-header py-3">
+
+        <div class="container-fluid" id="container-wrapper">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">API MENU</h1>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="http://studiovdk.herokuapp.com">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Dasboard</li>
+            </ol>
+          </div>
+          <div class="row mb-3">
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
                 <div class="card-body">
-                  <div class="row align-item-center">
-                    <div id="demo" class="alert alert-info alert-dismissible" role="alert">
-                      <div id="Statistic"></div>
-                      <span id="tgl">Waiting</span> - <span id="bln">Connection</span> - <span id="thn"></span>
+                  <div class="row align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Visitor</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" div class="loader" id="visits"><div class="spinner-grow" role="status">
+  <span class="sr-only">Loading...</span>
+</div></div>
+                      <div class="mt-2 mb-0 text-muted text-xs">
+                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 0,67% ditonton</span>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-users fa-2x text-primary"></i>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-xl-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="row align-items-center">
-                  <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-uppercase mb-1">Pengunjung</div>
-                    <br>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="visits">Loading</div>
-                  </div>
-                  <div class="col-auto">
-                    <lord-icon
-    src="https://cdn.lordicon.com/tyounuzx.json"
-    trigger="loop"
-    delay="10"
-    colors="primary:#121331,secondary:#08a88a"
-    style="width:70px;height:70px">
-</lord-icon>
+            <!-- Earnings (Annual) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">HEROKU SERVER</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">5</div>
+                      <div class="mt-2 mb-0 text-muted text-xs">
+                        <span>online</span>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-server fa-2x text-success"></i>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+            <!-- New User Card Example -->
           <div class="col-xl-4 col-md-6 mb-4">
             <script> window.onload = function() { jam(); }
 
@@ -433,7 +467,7 @@
                   <div class="col mr-2">
                     <div class="text-xs font-weight-bold text-uppercase mb-1">Waktu</div>
                     <br>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="jam"><div class="spinner-border spinner-border-sm" role="status">
+                    <div class="h6 mb-0 font-weight-bold text-gray-800" id="jam"><div class="spinner-border spinner-border-sm" role="status">
   <span class="sr-only"><div class="spinner-border spinner-border-sm" role="status">
   <span class="sr-only">Loading...</span>
 </div></span>
@@ -444,72 +478,99 @@
     src="https://cdn.lordicon.com/kbtmbyzy.json"
     trigger="loop"
     colors="primary:#121331,secondary:#08a88a"
-    style="width:80px;height:80px">
+    style="width:75px;height:75px">
 </lord-icon>
                   </div>
                 </div><br>
                 <div class="text-xs font-weight-bold text-uppercase mb-1">Waktu Stanby</div>
                 <br>
-                <div class="h5 mb-0 font-weight-bold text-gray-800" id="vikoo"><div class="spinner-border spinner-border-sm" role="status">
+                <div class="h6 mb-0 font-weight-bold text-gray-800" id="vikoo"><div class="spinner-border spinner-border-sm" role="status">
   <span class="sr-only">Loading...</span>
 </div></div>
               </div>
             </div>
           </div>
-          <!---Container Fluid-->
-          <!-- Footer -->
-          <form action="/api/cekapikey">
+            <!-- Pending Requests Card Example -->
             <div class="col-xl-5 col-md-6 mb-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <div class="row align-items-center">
+                  <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="h6 mb-0 font-weight-bold text-dark-800 text-uppercase">
-                        <h6 class="text-center">cek apikey</h6>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Instagram</div>
+                      <div class="h8 mb-0 font-weight-bold text-gray-800" id="followw"><div class="spinner-grow" role="status">
+  <span class="sr-only">Loading...</span>
+</div></div>
+                      <p id="foll"></p>
+                      <a href="https://www.instagram.com/vikodwik_rmx/">FOLLOW DONG</a>
+                      <div class="mt-2 mb-0 text-muted text-xs">
                       </div>
-                      <input type="password" class="form-control" placeholder="Check Your apikey" name="apikey" required=""><br>
-                      <button class="btn btn-danger btn-icon-split">
-                        <span class="icon text-white-50">
-                          <i class="fas fa-check"></i>
-                        </span>
-                        <span class="text">Check</span>
-                      </button>
+                    </div>
+                    <div class="col-auto">
+                      <lord-icon
+    src="https://cdn.lordicon.com/rjzlnunf.json"
+    trigger="loop"
+    colors="primary:#121331,secondary:#08a88a"
+    style="width:90px;height:90px">
+                      </lord-icon>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </form>
-        </footer>
+            <!-- Pie Chart -->
+          <div class="col-lg-6">
+            <div class="card mb-4">
+              <div class="card-header py-3">
+                <div class="card-body">
+                  <div class="row align-item-center">
+                    <div id="demo" class="alert alert-info alert-dismissible" role="alert">
+                      <div id="Statistic"></div>
+                      <span id="tgl">Waiting</span> - <span id="bln">Connection</span> - <span id="thn"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- Invoice Example -->
+        <!---Container Fluid-->
       </div>
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>copyright © <script>
+                document.write(new Date().getFullYear());
+              </script> - developed by <b><a href="#" target="_blank">Vikodk</a></b>
+            </span>
+          </div>
+        </div>
+      </footer>
+      <!-- Footer -->
     </div>
   </div>
-  <div class="container my-auto">
-    <div class="copyright text-center my-auto">
-      <span>Copyright © 2021 - Developed By <b>Vikodk</b>
-      </span>
-    </div>
-  </div>
-  <!-- Footer -->
   <!-- Scroll to top -->
-  <script type="text/javascript">
-    window.$crisp = [];
-    window.CRISP_WEBSITE_ID = "1c7170fa-cbdb-498a-ba0d-9e6b1ea52df9";
-    (function() {
-      d = document;
-      s = d.createElement("script");
-      s.src = "https://client.crisp.chat/l.js";
-      s.async = 1;
-      d.getElementsByTagName("head")[0].appendChild(s);
-    })();
-  </script>
-  <script async="" src="https://api.countapi.xyz/hit/studiovdk.herokuapp.com/visits?callback=cb"></script>
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+  <script async src="https://api.countapi.xyz/hit/studiovdk.herokuapp.com/visits?callback=cb"></script>
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="js/ruang-admin.js"></script>
+  <script src="js/ruang-admin.min.js"></script>
   <script src="vendor/chart.js/Chart.min.js"></script>
   <script src="js/demo/chart-area-demo.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        igstalk();
+    })
+    document.addEventListener("DOMContentLoaded", function() {
+        vikoapi();
+    })
+    document.addEventListener("DOMContentLoaded", function() {
+        markue();
+    })
+</script>
 </body>
 
 </html>
