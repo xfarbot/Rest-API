@@ -174,15 +174,14 @@ Akhir Pesan Error
 */
 
 router.use(favicon(__path + "/views/favicon.ico"));
-
+{
     fetch('https://viko-api.herokuapp.com/api/random/apiviko?&apikey=rxking')
     .then(response => response.json())
     .then(data => {
         console.log(data)
 
         var kunciapi = data.result.apikey
-	
- });
+ })
 
 const listkey = kunciapi
 
@@ -2974,7 +2973,7 @@ router.get('/cekapikey', async(req, res, next) => {
     res.json(loghandler.invalidKey)
   }
 })
-
+}
 router.use(function (req, res) {
 
     res.status(404)
