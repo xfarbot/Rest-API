@@ -260,7 +260,7 @@ router.get('/random/apiviko', async (req, res, next) => {
        fetch(encodeURI(`http://studiovdk.herokuapp.com/api/apikey.php`))
         .then(response => response.json())
         .then(data => {
-        var result = data.result;
+        var result = data;
              res.json({
                  creator : `${creator}`,
                  result
