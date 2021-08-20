@@ -151,21 +151,6 @@ var x = setInterval(function() {
     document.getElementById("vikoo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s "; 
 }, 1000); 
 
-function prosedur() {
-    fetch('http://viko-api.herokuapp.com/api/random/apiviko?&apikey=rxking')
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
-
-        let apimenu = data.result.apikey
-        let kampret = `${data.result.pekok} <br><br>Note: setiap pukul 23:00PM - 05:00AM APIKEY mati/berubah`
-        document.getElementById("apikuuu").innerHTML = apimenu
-        document.getElementById("lucast").innerHTML = kampret
-    })
-    .catch(err => {
-        console.log(err)
-    });
-}
 // Version in Sidebar
 
 var version = document.getElementById('version-ruangadmin');
