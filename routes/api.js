@@ -182,7 +182,7 @@ router.use(favicon(__path + "/views/favicon.ico"));
 
         var kunciapi = data.result.apikey
 	
- })
+ });
 
 const listkey = kunciapi
 
