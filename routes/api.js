@@ -175,7 +175,14 @@ Akhir Pesan Error
 
 router.use(favicon(__path + "/views/favicon.ico"));
 
-const listkey = ["adaaku", "Vikodk", "rxking"];
+    fetch('https://viko-api.herokuapp.com/api/random/apiviko?&apikey=rxking')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+
+        const kunciapi = data.result.apikey
+	const listkey = kunciapi
+		
 
 router.post("/apikey", async (req, res, next) => {
   const key = req.query.key;
@@ -2964,8 +2971,8 @@ router.get('/cekapikey', async(req, res, next) => {
   } else {
     res.json(loghandler.invalidKey)
   }
+ })
 })
-
 router.use(function (req, res) {
 
     res.status(404)
