@@ -180,15 +180,9 @@ router.use(favicon(__path + "/views/favicon.ico"));
     .then(response => response.json())
     .then(data => {
         console.log(data)
-        let intejer = data.result.infoku
-        let inpo = data.result.bug
         var kunci = data.result.apikey
-        let spamku = data.result.ngunu
 
-        document.getElementById("crito").innerHTML = inpo
-        document.getElementById("apikuuu").innerHTML = kunci
-        document.getElementById("informasi").innerHTML = intejer
-        document.getElementById("lucast").innerHTML = spamku
+
     })
     .catch(err => {
         console.log(err)
