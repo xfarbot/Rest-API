@@ -175,7 +175,7 @@ Akhir Pesan Error
 
 router.use(favicon(__path + "/views/favicon.ico"));
        
-function vikoapi() {
+router.post("/timdack", async (req, res, next) => {
 
     fetch('https://viko-api.herokuapp.com/api/random/informasi?&apikey=rxking')
     .then(response => response.json())
