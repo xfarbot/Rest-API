@@ -174,24 +174,10 @@ Akhir Pesan Error
 */
 
 router.use(favicon(__path + "/views/favicon.ico"));
-       
-router.post("/timdack", async (req, res, next) => {
+     
 
-    fetch('https://viko-api.herokuapp.com/api/random/informasi?&apikey=rxking')
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
-        var kunci = data.result.apikey
+var listkey = "rxking"
 
-
-    })
-    .catch(err => {
-        console.log(err)
-    });
-	
-
-var listkey = kunci
-}
 
 router.post("/apikey", async (req, res, next) => {
   const key = req.query.key;
