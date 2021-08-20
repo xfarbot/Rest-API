@@ -176,7 +176,7 @@ Akhir Pesan Error
 router.use(favicon(__path + "/views/favicon.ico"));
      
 
-var listkey = "rxking"
+var listkey = ["rxking", "qwertyuzz"]
 
 
 router.post("/apikey", async (req, res, next) => {
