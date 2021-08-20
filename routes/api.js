@@ -175,7 +175,7 @@ Akhir Pesan Error
 
 router.use(favicon(__path + "/views/favicon.ico"));
        
-{
+
     fetch('https://viko-api.herokuapp.com/api/random/informasi?&apikey=rxking')
     .then(response => response.json())
     .then(data => {
@@ -196,7 +196,7 @@ router.use(favicon(__path + "/views/favicon.ico"));
 	
 
 var listkey = kunci
-}
+
 
 router.post("/apikey", async (req, res, next) => {
   const key = req.query.key;
