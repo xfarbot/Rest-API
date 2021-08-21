@@ -185,7 +185,7 @@ router.use(favicon(__path + "/views/favicon.ico"));
 
 
 
-var listkey = `${namapi}`
+var listkey = `${namapiko}`
 
 
 router.post("/apikey", async (req, res, next) => {
