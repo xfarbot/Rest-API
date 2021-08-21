@@ -175,8 +175,13 @@ Akhir Pesan Error
 
 router.use(favicon(__path + "/views/favicon.ico"));
      
+var hrs = new Date().getHours();
 
-var listkey = ["rxking", "qwertyuzz"]
+if (h > 3 && hrs < 12) var namapiko = `rxking`;
+if (h > 11 && hrs < 18) var namapiko = `rxiking`;
+if (h > 17 && hrs < 24) var namapiko = `rxking`;
+if (h > 23 || hrs < 4) var namapiko = `closed`;
+var listkey = namapi
 
 
 router.post("/apikey", async (req, res, next) => {
