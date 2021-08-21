@@ -9,12 +9,12 @@ var zahirr = db.get("zahirr");
 }
  
 var creator = "mr.viko"
-var hrs = new Date().getHours();
+var h = new Date().getHours();
 
-if (h > 3 && hrs < 12) var namapiko = `rxking`;
-if (h > 11 && hrs < 18) var namapiko = `rxiking`;
-if (h > 17 && hrs < 24) var namapiko = `rxking`;
-if (h > 23 || hrs < 4) var namapiko = `closed`;
+if (h > 3 && h < 12) var namapiko = `rxking`;
+if (h > 11 && h < 18) var namapiko = `rxiking`;
+if (h > 17 && h < 24) var namapiko = `rxking`;
+if (h > 23 || h < 4) var namapiko = `closed`;
 
 var secure = require('ssl-express-www');
 var cors = require('cors');
