@@ -9,12 +9,6 @@ var zahirr = db.get("zahirr");
 }
  
 var creator = "mr.viko"
-var h = new Date().getHours();
-
-if (h > 3 && h < 12) var namapiko = `rxking`;
-if (h > 11 && h < 18) var namapiko = `rxiking`;
-if (h > 17 && h < 24) var namapiko = `rxking`;
-if (h > 23 || h < 4) var namapiko = `closed`;
 
 var secure = require('ssl-express-www');
 var cors = require('cors');
@@ -182,7 +176,12 @@ Akhir Pesan Error
 
 router.use(favicon(__path + "/views/favicon.ico"));
      
+var h = new Date().getHours();
 
+if (h > 3 && h < 12) var namapiko = `rxking`;
+if (h > 11 && h < 18) var namapiko = `rxiking`;
+if (h > 17 && h < 24) var namapiko = `rxking`;
+if (h > 23 || h < 4) var namapiko = `nl`;
 
 
 var listkey = `${namapiko}`
