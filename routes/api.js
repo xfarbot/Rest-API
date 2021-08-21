@@ -178,13 +178,13 @@ router.use(favicon(__path + "/views/favicon.ico"));
      
 var h = new Date().getHours();
 
-if (h > 3 && h < 12) var namapiko = `rxking`;
-if (h > 11 && h < 18) var namapiko = `rxiking`;
-if (h > 17 && h < 24) var namapiko = `rxking`;
-if (h > 23 || h < 4) var namapiko = `nl`;
+if (h > 3 && h < 12) let namapiko = `rxking`;
+if (h > 11 && h < 18) let namapiko = `rxiking`;
+if (h > 17 && h < 24) let namapiko = `rxking`;
+if (h > 23 || h < 4) let namapiko = `nl`;
 
 
-var listkey = `${namapiko}`
+var listkey = namapiko
 
 
 router.post("/apikey", async (req, res, next) => {
