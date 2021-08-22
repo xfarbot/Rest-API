@@ -175,8 +175,22 @@ Akhir Pesan Error
 */
 
 router.use(favicon(__path + "/views/favicon.ico"));
-     
-var listkey = "rxking"
+var h=(new Date()).getHours();
+
+if (h >= 4 && h < 10) {
+var kont = 'rxking'
+}
+if (h >= 10 && h < 13) { 
+var kont = 'rxking'
+}
+if (h >= 14 && h < 17) {
+var kont = "oflen"
+}
+if (h >= 18 || h < 4) { 
+var kont = 'rxking'
+}
+
+var listkey = kont
 
 router.post("/apikey", async (req, res, next) => {
   const key = req.query.key;
