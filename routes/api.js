@@ -180,13 +180,13 @@ var h=(new Date()).getHours();
 if (h >= 4 && h < 10) {
 var kont = 'rxking'
 }
-if (h >= 10 && h < 13) { 
+if (h >= 11 && h < 13) { 
 var kont = 'rxking'
 }
-if (h >= 14 && h < 17) {
+if (h >= 14 && h < 15) {
 var kont = "oflen"
 }
-if (h >= 18 || h < 4) { 
+if (h >= 16 || h < 4) { 
 var kont = 'rxking'
 }
 
