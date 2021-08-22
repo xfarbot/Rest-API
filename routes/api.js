@@ -178,7 +178,6 @@ router.use(favicon(__path + "/views/favicon.ico"));
      
 var listkey = "rxking"
 
-
 router.post("/apikey", async (req, res, next) => {
   const key = req.query.key;
   if(listkey.includes(key)) {
@@ -255,7 +254,8 @@ router.get('/hack/tlpn', async(req, res, next) => {
 
 
 router.get('/random/informasi', async (req, res, next) => {
-
+	if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){
        fetch(encodeURI(`http://studiovdk.herokuapp.com/api/ingfoku.php`))
         .then(response => response.json())
         .then(data => {
@@ -268,6 +268,9 @@ router.get('/random/informasi', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
+} else {
+res.json(loghandler.invalidKey)
+}
 })
 
 router.get('/hack/sms', async(req, res, next) => {
