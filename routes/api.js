@@ -254,6 +254,8 @@ router.get('/hack/tlpn', async(req, res, next) => {
 
 
 router.get('/random/informasi', async (req, res, next) => {
+	
+	var Apikey = req.query.apikey
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
        fetch(encodeURI(`http://studiovdk.herokuapp.com/api/ingfoku.php`))
