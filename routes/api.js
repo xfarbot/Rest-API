@@ -261,7 +261,7 @@ router.get('/random/informasi', async (req, res, next) => {
        fetch(encodeURI(`http://studiovdk.herokuapp.com/api/ingfoku.php`))
         .then(response => response.json())
         .then(data => {
-        var result = data;
+        var result = data.result;
              res.json({
                  creator : `${creator}`,
                  result
