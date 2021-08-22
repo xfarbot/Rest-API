@@ -2456,6 +2456,64 @@ router.get('/textpro/logo-wolf2', async(req, res, next) => {
   }
 });
 
+router.get('/textpro/transfomer', async(req, res, next) => {
+
+  const apikey = req.query.apikey;
+
+  const text = req.query.text;
+  
+  if(!apikey) return res.json(loghandler.notparam)
+  if(!text) return res.json(loghandler.nottext)
+  
+  if(listkey.includes(apikey)){
+    zrapi 
+  .textpro("https://textpro.me/create-a-transformer-text-effect-online-1035.html", [
+    text,
+  ])
+  .then((data) => {
+    res.json({
+      status: true,
+      code: 200,
+      creator: `${creator}`,
+      result: data
+    })
+  })
+  .catch((err) => console.log(err));
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+});
+
+router.get('/textpro/silvermetal', async(req, res, next) => {
+
+  const apikey = req.query.apikey;
+
+  const text = req.query.text1;
+  const text2 = req.query.text2;
+  
+  if(!apikey) return res.json(loghandler.notparam)
+  if(!text) return res.json(loghandler.nottext1)
+  if(!text2) return res.json(loghandler.nottext2)
+  
+  if(listkey.includes(apikey)){
+    zrapi 
+  .textpro("https://textpro.me/text-logo-3d-metal-silver-946.html", [
+    text, text2
+  ])
+  .then((data) => {
+    res.json({
+      status: true,
+      code: 200,
+      creator: `${creator}`,
+      result: data
+    })
+  })
+  .catch((err) => console.log(err));
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+});
+
 router.get('/textpro/logo-wolf', async(req, res, next) => {
 
   const apikey = req.query.apikey;
