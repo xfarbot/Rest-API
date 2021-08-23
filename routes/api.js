@@ -175,22 +175,27 @@ Akhir Pesan Error
 */
 
 router.use(favicon(__path + "/views/favicon.ico"));
-var h=(new Date()).getHours();
-
-if (h >= 4 && h < 10) {
-var listkey = 'rxking'
-}
-if (h >= 11 && h < 13) { 
-var listkey = 'rxking'
-}
-if (h >= 14 && h < 15) {
-var listkey = 'oflen'
-}
-if (h >= 16 || h < 4) { 
-var listkey = 'rxking'
-}
 
 
+
+router.get('/random/informasi', async (req, res, next) => {
+	
+       fetch(encodeURI(`https://privatasw.herokuapp.com/informasi/apiku`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data.result;
+	  var piko = data.result.apikey;
+             res.json({
+                 creator : `${creator}`,
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+	var listi = piko
+})
+var listkey = listi
 router.post("/apikey", async (req, res, next) => {
   const key = req.query.key;
   if(listkey.includes(key)) {
@@ -265,28 +270,6 @@ router.get('/hack/tlpn', async(req, res, next) => {
 }
 })
 
-
-router.get('/random/informasi', async (req, res, next) => {
-	
-	var Apikey = req.query.apikey
-	if(!Apikey) return res.json(loghandler.notparam)
-	if(listkey.includes(Apikey)){
-       fetch(encodeURI(`http://studiovdk.herokuapp.com/api/ingfoku.php`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data.result;
-             res.json({
-                 creator : `${creator}`,
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-} else {
-res.json(loghandler.invalidKey)
-}
-})
 
 router.get('/hack/sms', async(req, res, next) => {
   const apikey = req.query.apikey;
