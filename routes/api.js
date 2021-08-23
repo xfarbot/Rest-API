@@ -178,19 +178,18 @@ router.use(favicon(__path + "/views/favicon.ico"));
 var h=(new Date()).getHours();
 
 if (h >= 4 && h < 10) {
-var kont = 'rxking'
+var listkey = 'rxking'
 }
 if (h >= 11 && h < 13) { 
-var kont = 'rxking'
+var listkey = 'rxking'
 }
 if (h >= 14 && h < 15) {
-var kont = 'oflen'
+var listkey = 'oflen'
 }
 if (h >= 16 || h < 4) { 
-var kont = 'rxking'
+var listkey = 'rxking'
 }
 
-var listkey = kont
 
 router.post("/apikey", async (req, res, next) => {
   const key = req.query.key;
