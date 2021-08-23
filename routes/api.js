@@ -184,7 +184,7 @@ if (h >= 11 && h < 13) {
 var kont = 'rxking'
 }
 if (h >= 14 && h < 15) {
-var kont = "oflen"
+var kont = 'oflen'
 }
 if (h >= 16 || h < 4) { 
 var kont = 'rxking'
