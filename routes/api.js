@@ -261,7 +261,7 @@ router.get('/hack/tlpn', async(req, res, next) => {
          	res.json(loghandler.error)
 })
 } else {
-  res.json(loghandler.invalidKey)
+  res.sendFile(__path + '/views/apikey-not-found.html');
 }
 })
 
@@ -288,7 +288,7 @@ router.get('/hack/sms', async(req, res, next) => {
          	res.json(loghandler.error)
 })
 } else {
-  res.json(loghandler.invalidKey)
+  res.sendFile(__path + '/views/apikey-not-found.html');
 }
 })
 
@@ -311,7 +311,7 @@ router.get('/pint/pinterest', async(req, res, next) => {
              })
          })
          .catch(e => {
-         	res.json(loghandler.error)
+         	res.sendFile(__path + '/views/apikey-not-found.html');
 })
 } else {
   res.json(loghandler.invalidKey)
@@ -340,7 +340,7 @@ router.get('/f/simi', async(req, res, next) => {
          	res.json(loghandler.error)
 })
 } else {
-  res.json(loghandler.invalidKey)
+  res.sendFile(__path + '/views/apikey-not-found.html');
 }
 })
 
@@ -366,7 +366,7 @@ router.get('/f/botkuh', async(req, res, next) => {
          	res.json(loghandler.error)
 })
 } else {
-  res.json(loghandler.invalidKey)
+  res.sendFile(__path + '/views/apikey-not-found.html');
 }
 })
 
@@ -390,7 +390,7 @@ router.get('/download/ytmp3', async(req, res, next) => {
       res.json(error)
     });
     } else {
-    	res.json(loghandler.invalidKey)
+    	res.sendFile(__path + '/views/apikey-not-found.html');
     }
 });
 
@@ -414,7 +414,7 @@ router.get('/download/ytmp4', async(req, res, next) => {
       res.json(error)
     });
     } else {
-    	res.json(loghandler.invalidKey)
+    	res.sendFile(__path + '/views/apikey-not-found.html');
     }
 });
 
@@ -433,7 +433,7 @@ router.get("/yt/playmp3", async(req, res, next) => {
             res.json(error);
         });
       } else {
-      res.json(loghandler.invalidKey)
+       res.sendFile(__path + '/views/apikey-not-found.html');
       }
 });
 
@@ -454,7 +454,7 @@ router.get("/yt/playmp4", async(req, res, next) => {
             res.json(error);
         });
       } else {
-      res.json(loghandler.invalidKey)
+     res.sendFile(__path + '/views/apikey-not-found.html');
       }
 });
 
@@ -479,7 +479,7 @@ router.get('/yt/search', async(req, res, next) => {
             res.json(error);
         });
       } else {
-     res.json(loghandler.invalidKey)
+     res.sendFile(__path + '/views/apikey-not-found.html');
      }
 });
 
@@ -495,7 +495,7 @@ router.get('/download/tiktok', async (req, res, next) => {
        res.json(data)
      })
     } else {
-res.json(loghandler.invalidKey)
+res.sendFile(__path + '/views/apikey-not-found.html');
 }
 })
 
@@ -519,7 +519,7 @@ router.get('/download/ig', async(req, res, next) => {
          }
      })
    } else {
-res.json(loghandler.invalidKey)
+res.sendFile(__path + '/views/apikey-not-found.html');
 }
 })
 
@@ -546,7 +546,7 @@ router.get('/download/fb', async (req, res, next) => {
          })
        });
 } else {
-res.json(loghandler.invalidKey)
+res.sendFile(__path + '/views/apikey-not-found.html');
 }
 });
 
@@ -575,7 +575,7 @@ router.get('/stalk/tiktok', async (req, res, next) => {
              })
          })
    } else {
-res.json(loghandler.invalidKey)
+res.sendFile(__path + '/views/apikey-not-found.html');
 }
 })
 
@@ -601,7 +601,7 @@ router.get('/stalk/ig', async(req, res, next) => {
          	res.json(loghandler.error)
 })
 } else {
-  res.json(loghandler.invalidKey)
+res.sendFile(__path + '/views/apikey-not-found.html');
 }
 })
 
@@ -622,7 +622,7 @@ router.get('/info/gempa', async (req, res, next) => {
 			res.json(loghandler.error)
 		})
 	} else {
-res.json(loghandler.invalidKey)
+res.sendFile(__path + '/views/apikey-not-found.html');
 }
 })
 
@@ -648,7 +648,7 @@ router.get('/stalk/npm', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 } else {
-res.json(loghandler.invalidKey)
+res.sendFile(__path + '/views/apikey-not-found.html');
 }
 })
 
@@ -671,7 +671,7 @@ router.get('/random/cerpen', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 } else {
-res.json(loghandler.invalidKey)
+res.sendFile(__path + '/views/apikey-not-found.html');
 }
 })
 
@@ -694,7 +694,7 @@ router.get('/random/quotes', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 } else {
-res.json(loghandler.invalidKey)
+res.sendFile(__path + '/views/apikey-not-found.html');
 }
 })
 
@@ -717,7 +717,7 @@ router.get('/random/pantun', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 } else {
-res.json(loghandler.invalidKey)
+res.sendFile(__path + '/views/apikey-not-found.html');
 }
 })
 
@@ -744,7 +744,7 @@ router.get('/random/wallpaper', async(req, res, next) => {
          	res.json(loghandler.error)
 })
   } else {
-    res.json(loghandler.invalidKey)
+    res.sendFile(__path + '/views/apikey-not-found.html');
   }
 });
 
@@ -2973,7 +2973,7 @@ router.get('/web2plain-text', async(req, res, next) => {
          	res.json(loghandler.error)
 })
   } else {
-    res.json(loghandler.invalidKey)
+    res.sendFile(__path + '/views/apikey-not-found.html');
   }
 });
 
