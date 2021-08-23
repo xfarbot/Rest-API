@@ -2883,7 +2883,7 @@ router.get("/maker/silver-button", async (req, res, next) => {
   if(!apikey) return res.json(loghandler.notparam)
   
   if(listkey.includes(apikey)) {
-    let hasil = 'https://api.zeks.me/api/gplaybutton?apikey=pikodeka67&text='+ text 
+    let hasil = 'https://api.zeks.me/api/splaybutton?apikey=pikodeka67&text='+ text 
     data = await fetch(hasil).then(v => v.buffer())
     await fs.writeFileSync(__path +'/tmp/sil.jpeg', data)
     res.sendFile(__path +'/tmp/sil.jpeg')
