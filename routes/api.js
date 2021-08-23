@@ -234,7 +234,8 @@ router.get('/music/joox', async(req, res, next) => {
     res.json(result)
   });
   } else {
-    res.json(loghandler.invalidKey)
+
+    res.sendFile(__path + '/views/apikey-not-found.html');
   }
 });
 
