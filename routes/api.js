@@ -2847,7 +2847,7 @@ router.get("/maker/nulis", async (req, res, next) => {
   if(!apikey) return res.json(loghandler.notparam)
   
   if(listkey.includes(apikey)) {
-    let hasil = 'https://api.zeks.xyz/api/nulis?text='+ text +'&apikey=apivinz' 
+    let hasil = 'https://api.zeks.xyz/api/nulis?text='+ text +'&apikey=pikodeka67' 
     data = await fetch(hasil).then(v => v.buffer())
     await fs.writeFileSync(__path +'/tmp/nulis.jpeg', data)
     res.sendFile(__path +'/tmp/nulis.jpeg')
