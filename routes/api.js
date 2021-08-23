@@ -2856,6 +2856,24 @@ router.get("/maker/nulis", async (req, res, next) => {
   }
 })
 
+router.get("/maker/pubeje", async (req, res, next) => {
+  
+  apikey = req.query.apikey;
+  text = req.query.text;
+  text2 = req.query.text2;
+  if(!text) return res.json(loghandler.nottext)
+  if(!apikey) return res.json(loghandler.notparam)
+  
+  if(listkey.includes(apikey)) {
+    let hasil = 'https://api.zeks.me/api/pubglogo?apikey=pikodeka67&text1='+ text +'&text2='+ text2
+    data = await fetch(hasil).then(v => v.buffer())
+    await fs.writeFileSync(__path +'/tmp/pup.jpeg', data)
+    res.sendFile(__path +'/tmp/pup.jpeg')
+  } else {
+    res.sendFile(__path + '/views/apikey-not-found.html');
+  }
+})
+
 router.get("/maker/gold-button", async (req, res, next) => {
   
   apikey = req.query.apikey;
@@ -2979,7 +2997,7 @@ router.get('/maker/emoji2png', async(req, res, next) => {
     })
   
     .catch((err) => {
-      res.json(loghandler.error)
+      res.sendFile(__path + '/views/apikey-not-found.html');
     })
   } else {
     res.json(loghandler.invalidKey)
