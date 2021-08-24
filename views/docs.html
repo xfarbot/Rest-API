@@ -2,7 +2,15 @@
 <html>
 
 <head>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script>
+        $.getJSON("https://api.ipify.org?format=json",
+                                          function(data) {
+  
+            // Setting text of element P with id gfg
+            $("#gfg").html(data.ip);
+        })
+    </script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -142,9 +150,9 @@
         <div id="collapseMaker" class="collapse" aria-labelledby="headingText" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="/api/maker/nulis?apikey=APIKEY&amp;text=viko ganteng kata mamak">Nulis Buku</a>
-		  <a class="collapse-item" href="/api/maker/silver-button?apikey=APIKEY&text=AULIAFVNKY">Silver Button</a>
-		  <a class="collapse-item" href="/api/maker/pubeje?apikey=APIKEY&text=FREE%20FIRE&text2=BATTLEGROUND">Pubg logo</a>
-		  <a class="collapse-item" href="/api/maker/gold-button?apikey=APIKEY&text=AULIAFVNKY">Gold Button</a>
+      <a class="collapse-item" href="/api/maker/silver-button?apikey=APIKEY&text=AULIAFVNKY">Silver Button</a>
+      <a class="collapse-item" href="/api/maker/pubeje?apikey=APIKEY&text=FREE%20FIRE&text2=BATTLEGROUND">Pubg logo</a>
+      <a class="collapse-item" href="/api/maker/gold-button?apikey=APIKEY&text=AULIAFVNKY">Gold Button</a>
             <a class="collapse-item" href="/api/maker/ttp?apikey=APIKEY&amp;text=Itskhyaaviko">Text To Picture</a>
             <a class="collapse-item" href="/api/maker/emoji2png?apikey=APIKEY&amp;text=😂">Emoji To Png</a>
             <hr>
@@ -199,7 +207,7 @@
             <a class="collapse-item" href="/api/textpro/marvel?apikey=APIKEY&amp;text1=Marvel&amp;text2=Studitod">Marvel Text Image</a>
             <a class="collapse-item" href="/api/textpro/glitch2?apikey=APIKEY&amp;text1=Studiovdk&amp;text2=mr-viko">Glitch Text Image</a>
             <a class="collapse-item" href="/api/textpro/silvermetal?apikey=APIKEY&amp;text1=Studiovdk&amp;text2=mr-viko">Silver metal Text</a>
-	    <a class="collapse-item" href="/api/textpro/transfomer?apikey=APIKEY&amp;text=Studiovdk">Transfomer Text Img</a>
+      <a class="collapse-item" href="/api/textpro/transfomer?apikey=APIKEY&amp;text=Studiovdk">Transfomer Text Img</a>
           </div>
         </div>
       </li>
@@ -328,7 +336,7 @@
     </ul>
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
-      <div id="content" style="	background-image: url(https://pingendo.com/site-assets/cover.jpg);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+      <div id="content" style=" background-image: url(https://pingendo.com/site-assets/cover.jpg);  background-position: top left;  background-size: 100%;  background-repeat: repeat;">
         <!-- TopBar -->
         <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top" style="background-image: url(&quot;https://pingendo.com/site-assets/cover.jpg&quot;); background-position: left top; background-size: 100%; background-repeat: repeat;">
           <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
@@ -412,7 +420,7 @@
   <span class="sr-only">Loading...</span>
 </div></div>
                       <div class="mt-2 mb-0 text-muted text-xs">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 0,33% ditonton</span>
+                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 0,37% ditonton</span>
                       </div>
                     </div>
                     <div class="col-auto">
@@ -428,6 +436,30 @@
                 </div>
               </div>
             </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">IP ADDRESS</div>
+                      <div class="h6 mb-0 font-weight-bold text-gray-800" class="loader" id="gfg"><div class="spinner-grow" role="status">
+  <span class="sr-only">Loading...</span>
+</div></div>
+                      <div class="mt-2 mb-0 text-muted text-xs">
+                      </div>
+                    </div>
+                    <div class="col-auto">
+<lord-icon
+    src="https://cdn.lordicon.com/wrprwmwt.json"
+    trigger="loop"
+    colors="primary:#121331,secondary:#08a88a"
+    style="width:70px;height:70px">
+</lord-icon>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <!-- Earnings (Annual) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card h-100">
@@ -436,7 +468,7 @@
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-uppercase mb-1">APIKEY</div>
                       <span class="h5 mb-0 font-weight-bold text-gray-800" id="apikuuu">
-					  <div class="spinner-grow" role="status">
+            <div class="spinner-grow" role="status">
   <span class="sr-only">Loading...</span>
 </div></span>
                       <div class="mt-2 mb-0 text-muted text-xs">
@@ -504,6 +536,28 @@
             </div>
           </div>
             <!-- Pending Requests Card Example -->
+            <form action="/api/cekapikey">
+            <div class="col-xl-11 col-md-7 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col mr-2">
+           <div class="h6 mb-0 font-weight-bold text-dark-800 text-uppercase">
+          <h6 class="text-center">CEK APIKEY</h6>
+          </div>
+           <input type="password" class="form-control" placeholder="Check Your apikey" name="apikey" required=""><br>
+            <button class="btn btn-danger btn-icon-split">
+             <span class="icon text-white-50">
+              <i class="fas fa-check"></i>
+             </span>
+             <span class="text">OK</span>
+            </button>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+  </form>
             <!-- Pie Chart -->
           <div class="col-lg-6">
             <div class="card mb-4">
@@ -520,6 +574,7 @@
             </div>
           </div>
         <!-- Invoice Example -->
+
         <!---Container Fluid-->
       </div>
       <!-- Footer -->
@@ -548,7 +603,7 @@
   <script src="vendor/chart.js/Chart.min.js"></script>
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="https://viko-api.herokuapp.com/js/ruang-admin.js"></script>
-  
+  <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="1c7170fa-cbdb-498a-ba0d-9e6b1ea52df9";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
         vikoapi();
